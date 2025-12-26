@@ -129,7 +129,7 @@ Wallpaper collection provided with Sway
 %meson \
     -Dsd-bus-provider=libsystemd \
     -Dwerror=false \
-    -Dman-pages=false
+    -Dman-pages=disabled
 %meson_build
 
 %install
