@@ -8,6 +8,8 @@ License:        MIT
 URL:            https://github.com/swaywm/sway
 Source0:        %{url}/releases/download/%{tag}/%{name}-%{tag}.tar.gz
 
+Source4:    input-event-codes.h
+
 # Minimal configuration file for headless or buildroot use
 Source100:      config.minimal
 Source101:      sway-portals.conf
@@ -124,6 +126,9 @@ Wallpaper collection provided with Sway
 # apply unconditional patches
 #autopatch -p1 -M99
 # apply conditional patches
+
+mkdir -p %{_builddir}/%{name}-%{tag}/%{name}/include/linux
+cp %{SOURCE4} %{_builddir}/%{name}-%{tag}/%{name}/include/linux
 
 %build
 %meson \
