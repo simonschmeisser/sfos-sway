@@ -30,7 +30,7 @@ BuildRequires:  pkgconfig(libdrm)
 BuildRequires:  pkgconfig(libevdev)
 BuildRequires:  pkgconfig(libinput) >= 1.26.0
 BuildRequires:  pkgconfig(libpcre2-8)
-BuildRequires:  pkgconfig(libsystemd) >= 239
+BuildRequires:  pkgconfig(libsystemd)
 BuildRequires:  pkgconfig(libudev)
 BuildRequires:  pkgconfig(pango)
 BuildRequires:  pkgconfig(pangocairo)
