@@ -7,9 +7,6 @@ Summary:        i3-compatible window manager for Wayland
 License:        MIT
 URL:            https://github.com/swaywm/sway
 Source0:        %{url}/releases/download/%{tag}/%{name}-%{tag}.tar.gz
-Source1:        %{url}/releases/download/%{tag}/%{name}-%{tag}.tar.gz.sig
-# 0FDE7BE0E88F5E48: emersion <contact@emersion.fr>
-Source2:        https://emersion.fr/.well-known/openpgpkey/hu/dj3498u4hyyarh35rkjfnghbjxug6b19#/gpgkey-0FDE7BE0E88F5E48.gpg
 
 # Minimal configuration file for headless or buildroot use
 Source100:      config.minimal
@@ -44,8 +41,6 @@ BuildRequires:  pkgconfig(wayland-cursor)
 BuildRequires:  pkgconfig(wayland-server) >= 1.21.0
 BuildRequires:  pkgconfig(wayland-protocols) >= 1.24
 BuildRequires:  pkgconfig(wlroots-0.19)
-BuildRequires:  pkgconfig(xcb)
-BuildRequires:  pkgconfig(xcb-icccm)
 BuildRequires:  pkgconfig(xkbcommon) >= 1.5.0
 
 # Require any of the available configuration packages;
@@ -126,8 +121,7 @@ Wallpaper collection provided with Sway
 
 
 %prep
-%{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
-%autosetup -N -n %{name}-%{tag}
+%autosetup -N -n %{name}-%{tag}/%{name}
 # apply unconditional patches
 #autopatch -p1 -M99
 # apply conditional patches
