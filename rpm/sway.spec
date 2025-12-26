@@ -35,7 +35,6 @@ BuildRequires:  pkgconfig(libudev)
 BuildRequires:  pkgconfig(pango)
 BuildRequires:  pkgconfig(pangocairo)
 BuildRequires:  pkgconfig(pixman-1)
-BuildRequires:  pkgconfig(scdoc)
 BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-cursor)
 BuildRequires:  pkgconfig(wayland-server) >= 1.21.0
@@ -129,7 +128,8 @@ Wallpaper collection provided with Sway
 %build
 %meson \
     -Dsd-bus-provider=libsystemd \
-    -Dwerror=false
+    -Dwerror=false \
+    -Dman-pages=false
 %meson_build
 
 %install
